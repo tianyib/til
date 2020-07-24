@@ -12,7 +12,7 @@ Inherit the view model of ListView items from BindableObject and call OnProperty
 ```c#
 listItems[listItems.IndexOf(item)] = item;
 ```
-If ListView item does not implement IEquable, use foreach to locate changed item.
+If ListView item does not implement [IEquable](https://docs.microsoft.com/en-us/dotnet/api/system.iequatable-1?view=netcore-3.1), use foreach to locate changed item.
 ```c#
 foreach (var item in listItems)
   if (item.Id == changedItemId)
