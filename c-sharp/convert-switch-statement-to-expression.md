@@ -1,5 +1,5 @@
 # Convert switch statement to expression
-## statement:
+### statement:
 ```c#
 
 switch (condition)
@@ -15,7 +15,7 @@ switch (condition)
     break;
 }
 ```
-## expression:
+### expression:
 ```c#
 result = condition switch
 {
