@@ -46,11 +46,8 @@ public decimal Price
 public string StrPrice
 {
     get => _price.ToString();
-    set
-    {
-        var price = int.TryParse(value, out int result) ? result : 0;
-        SetProperty(ref _price, price, nameof(Price);
-    }
+    set => SetProperty(ref _price, int.TryParse(value, out int result) ? result : 0,
+        nameof(Price));
 }
 ```
 in BaseViewModel:
