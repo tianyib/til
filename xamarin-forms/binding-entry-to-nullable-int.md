@@ -41,7 +41,7 @@ protected decimal _price = 0;
 public decimal Price
 {
     get => _price;
-    set => SetProperty(ref _price, value, nameof(Price));
+    set => SetProperty(ref _price, value, nameof(Price), () => OnPropertyChanged(nameof(StrPrice)));
 }
 public string StrPrice
 {
@@ -50,6 +50,23 @@ public string StrPrice
     {
         Price = int.TryParse(value, out int result) ? result : 0;
     }
+}
+```
+in BaseViewModel:
+``` c#
+protected bool SetProperty<T>(ref T backingStore, T value, [CallerMemberName]string propertyName = "",
+    Action onChanged = null, Action onChanging = null)
+{
+    if (EqualityComparer<T>.Default.Equals(backingStore, value))
+        return false;
+
+    onChanging?.Invoke();
+
+    backingStore = value;
+
+    onChanged?.Invoke();
+    OnPropertyChanged(propertyName);
+    return true;
 }
 ```
 in Page:
