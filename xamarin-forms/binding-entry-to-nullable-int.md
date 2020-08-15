@@ -48,7 +48,8 @@ public string StrPrice
     get => _price.ToString();
     set
     {
-        Price = int.TryParse(value, out int result) ? result : 0;
+        var price = int.TryParse(value, out int result) ? result : 0;
+        SetProperty(ref _price, price, nameof(Price);
     }
 }
 ```
