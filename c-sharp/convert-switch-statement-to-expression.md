@@ -1,4 +1,5 @@
 # Convert switch statement to expression
+Beginning with C# 8.0, you use the switch expression to evaluate a single expression from a list of candidate expressions based on a pattern match with an input expression.
 ### statement:
 ```c#
 
