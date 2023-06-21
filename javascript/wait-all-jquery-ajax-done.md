@@ -1,4 +1,4 @@
-##Wait until all jQuery Ajax requests are done
+## Wait until all jQuery Ajax requests are done
 
 ```javascript
 $.when(ajax1(), ajax2(), ajax3(), ajax4()).done(function(a1, a2, a3, a4){
