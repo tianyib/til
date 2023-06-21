@@ -2,7 +2,7 @@
 
 ```sql
 DECLARE @Date date = GETDATE()
-SELECT CASE WHEN DATEDIFF(day, '20230101', @ServerTime) % 7 = 0 THEN 1 ELSE 0 END
+SELECT CASE WHEN DATEDIFF(day, '20230101', @ServerTime) % 7 = 0 THEN 1 ELSE 0 END  --Pick any Sunday, for example, 20230101
 ```
 
 Or
